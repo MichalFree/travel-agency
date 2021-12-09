@@ -9,13 +9,13 @@ const OrderForm = ({ tripCost, options, id, setOrderOption }) => {
   return (
     <Grid>
       <Row>
-        {pricing.map(options => (
-          <Col md={4} key={id}>
-            <OrderOption {...options} currentValue={options['car-rental']} setOrderOption={setOrderOption}/>
-          </Col>
+      {pricing.map(option => (
+        <Col md={4} key={option.id}>
+          <OrderOption {...option} currentValue={options[option.id]} setOrderOption={setOrderOption} />
+        </Col>
         ))}
         <Col xs={12}>
-          <OrderSummary tripCost={tripCost} options={pricing} />
+          <OrderSummary tripCost={tripCost} options={options} />
         </Col>
       </Row>
     </Grid>
