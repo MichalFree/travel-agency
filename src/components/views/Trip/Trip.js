@@ -10,11 +10,10 @@ import DetailsBox from '../../common/DetailsBox/DetailsBox';
 import DetailsImage from '../../common/DetailsImage/DetailsImage';
 import List from '../../common/List/List';
 import ListItem from '../../common/ListItem/ListItem';
-
 import styles from './Trip.module.scss';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 
-const Trip = ({error, name, image, cost, days, description, country, intro, pricing}) => {
+const Trip = ({error, name, image, cost, days, country, intro}) => {
   if(error) return <NotFound />;
   else return (
     <Section>
@@ -82,8 +81,9 @@ Trip.propTypes = {
   image: PropTypes.string,
   cost: PropTypes.string,
   days: PropTypes.number,
-  description: PropTypes.string,
   country: PropTypes.object,
+  error: PropTypes.string,
+  intro: PropTypes.string,
 };
 
 export default Trip;
