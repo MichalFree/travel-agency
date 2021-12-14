@@ -14,8 +14,10 @@ import styles from './Trip.module.scss';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 
 const Trip = ({error, name, image, cost, days, country, intro}) => {
-  if(error) return <NotFound />;
-  else return (
+  if (error) {
+    return <NotFound />;
+  }
+  return (
     <Section>
       <Grid>
         <PageTitle text={name} />
