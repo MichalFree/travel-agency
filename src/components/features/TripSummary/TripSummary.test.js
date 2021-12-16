@@ -22,6 +22,9 @@ describe('Component TripSummary', () => {
   it('Should throw error without required props', () => {
     expect(() => shallow(<TripSummary />)).toThrow();
   });
+  it('Should throw error without required prop', () => {
+    expect(() => shallow(<TripSummary image='image'/>)).toThrow();
+  });
   it('Should submit 3 tags to TripSummary component', () => {
     const expectedTags = ['tag1', 'tag2', 'tag3'];
     const component = shallow(<TripSummary name='TripSummary name props Name Ipsum' tags={expectedTags} />);
